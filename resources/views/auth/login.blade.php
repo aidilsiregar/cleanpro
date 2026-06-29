@@ -8,7 +8,7 @@
     @csrf
 
     <!-- Email -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="email" class="form-label">Alamat Email</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Password -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Remember & Forgot -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="form-group d-flex justify-content-between align-items-center mb-4">
         <div class="form-check">
             <input type="checkbox" name="remember" id="remember" class="form-check-input" {{ old('remember') ? 'checked' : '' }}>
             <label for="remember" class="form-check-label">Ingat Saya</label>
@@ -50,27 +50,33 @@
     </div>
 
     <!-- Submit -->
-    <button type="submit" class="btn btn-primary w-100">
-        <i class="fas fa-sign-in-alt me-2"></i> Masuk
-    </button>
+    <div class="btn-submit">
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="fas fa-sign-in-alt me-2"></i> Masuk
+        </button>
+    </div>
 
     <!-- Divider -->
-    <div class="divider">
-        <span>atau</span>
+    <div class="divider-auth">
+        <div class="divider">
+            <span>atau</span>
+        </div>
     </div>
 
     <!-- Social Login -->
-    <div class="d-grid gap-2">
-        <button type="button" class="btn-social">
-            <i class="fab fa-google" style="color: #db4437;"></i> Login dengan Google
-        </button>
-        <button type="button" class="btn-social">
-            <i class="fab fa-facebook" style="color: #4267B2;"></i> Login dengan Facebook
-        </button>
+    <div class="social-login">
+        <div class="d-grid gap-2">
+            <button type="button" class="btn-social">
+                <i class="fab fa-google" style="color: #db4437;"></i> Login dengan Google
+            </button>
+            <button type="button" class="btn-social">
+                <i class="fab fa-facebook" style="color: #4267B2;"></i> Login dengan Facebook
+            </button>
+        </div>
     </div>
 
     <!-- Register Link -->
-    <div class="text-center mt-4">
+    <div class="auth-link-bottom text-center mt-4">
         <p class="mb-0" style="color: #4a5568;">
             Belum punya akun? <a href="{{ route('register') }}" class="auth-link">Daftar Sekarang</a>
         </p>

@@ -10,6 +10,9 @@
     <style>
         * {
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
@@ -57,17 +60,20 @@
             max-width: 480px;
             position: relative;
             z-index: 1;
-            animation: slideUp 0.6s ease;
+            /* Animasi slide up saat load */
+            animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(40px);
         }
         
         @keyframes slideUp {
-            from {
+            0% {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(40px) scale(0.96);
             }
-            to {
+            100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
         
@@ -78,6 +84,12 @@
             padding: 45px 40px 40px;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .auth-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.3);
         }
         
         .auth-card::before {
@@ -316,6 +328,12 @@
             margin-top: 20px;
             font-size: 0.85rem;
             border: 1px dashed #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-card .demo-credentials:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
         }
         
         .auth-card .demo-credentials strong {
@@ -338,6 +356,13 @@
             margin-top: 20px;
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.85rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         
         .auth-footer a {
@@ -380,6 +405,54 @@
         .form-check-label {
             color: #4a5568;
             font-size: 0.9rem;
+        }
+        
+        /* Stagger animation for form elements */
+        .auth-card .form-group {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .auth-card .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .auth-card .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .auth-card .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .auth-card .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .auth-card .form-group:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .auth-card .btn-submit {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.5s forwards;
+        }
+        
+        .auth-card .divider-auth {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.6s forwards;
+        }
+        
+        .auth-card .social-login {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.7s forwards;
+        }
+        
+        .auth-card .auth-link-bottom {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.8s forwards;
+        }
+        
+        .auth-card .demo-credentials {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.9s forwards;
         }
         
         /* Responsive */

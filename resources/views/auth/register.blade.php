@@ -8,7 +8,7 @@
     @csrf
 
     <!-- Name -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="name" class="form-label">Nama Lengkap</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Email -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="email" class="form-label">Alamat Email</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -34,7 +34,7 @@
     </div>
 
     <!-- Phone -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="phone" class="form-label">Nomor Telepon</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Address -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="address" class="form-label">Alamat</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Password -->
-    <div class="mb-3">
+    <div class="form-group mb-3">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -77,7 +77,7 @@
     </div>
 
     <!-- Confirm Password -->
-    <div class="mb-4">
+    <div class="form-group mb-4">
         <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -90,27 +90,33 @@
     </div>
 
     <!-- Submit -->
-    <button type="submit" class="btn btn-primary w-100">
-        <i class="fas fa-user-plus me-2"></i> Daftar
-    </button>
+    <div class="btn-submit">
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="fas fa-user-plus me-2"></i> Daftar
+        </button>
+    </div>
 
     <!-- Divider -->
-    <div class="divider">
-        <span>atau</span>
+    <div class="divider-auth">
+        <div class="divider">
+            <span>atau</span>
+        </div>
     </div>
 
     <!-- Social Register -->
-    <div class="d-grid gap-2">
-        <button type="button" class="btn-social">
-            <i class="fab fa-google" style="color: #db4437;"></i> Daftar dengan Google
-        </button>
-        <button type="button" class="btn-social">
-            <i class="fab fa-facebook" style="color: #4267B2;"></i> Daftar dengan Facebook
-        </button>
+    <div class="social-login">
+        <div class="d-grid gap-2">
+            <button type="button" class="btn-social">
+                <i class="fab fa-google" style="color: #db4437;"></i> Daftar dengan Google
+            </button>
+            <button type="button" class="btn-social">
+                <i class="fab fa-facebook" style="color: #4267B2;"></i> Daftar dengan Facebook
+            </button>
+        </div>
     </div>
 
     <!-- Login Link -->
-    <div class="text-center mt-4">
+    <div class="auth-link-bottom text-center mt-4">
         <p class="mb-0" style="color: #4a5568;">
             Sudah punya akun? <a href="{{ route('login') }}" class="auth-link">Masuk Sekarang</a>
         </p>
