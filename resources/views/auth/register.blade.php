@@ -36,12 +36,9 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
-<<<<<<< HEAD
-    <div class="mb-3">
-=======
+
     <!-- Name -->
     <div class="form-group mb-3">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="name" class="form-label">Nama Lengkap</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -53,12 +50,9 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="mb-3">
-=======
+
     <!-- Email -->
     <div class="form-group mb-3">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="email" class="form-label">Alamat Email</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -70,12 +64,9 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="mb-3">
-=======
+
     <!-- Phone -->
     <div class="form-group mb-3">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="phone" class="form-label">Nomor Telepon</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -87,12 +78,8 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="mb-3">
-=======
     <!-- Address -->
     <div class="form-group mb-3">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="address" class="form-label">Alamat</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -104,12 +91,8 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="mb-3">
-=======
     <!-- Password -->
     <div class="form-group mb-3">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -125,12 +108,8 @@
         <small class="form-text">Password harus minimal 8 karakter.</small>
     </div>
 
-<<<<<<< HEAD
-    <div class="mb-4">
-=======
     <!-- Confirm Password -->
     <div class="form-group mb-4">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
         <div class="input-group">
             <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -142,7 +121,7 @@
         </div>
     </div>
 
-<<<<<<< HEAD
+
     <button type="submit" class="btn btn-primary w-100">
         <i class="fas fa-user-plus me-2"></i> Daftar
     </button>
@@ -161,7 +140,7 @@
     </div>
 
     <div class="text-center mt-4">
-=======
+
     <!-- Submit -->
     <div class="btn-submit">
         <button type="submit" class="btn btn-primary w-100">
@@ -190,7 +169,6 @@
 
     <!-- Login Link -->
     <div class="auth-link-bottom text-center mt-4">
->>>>>>> 4643dcee5e2d97d24819f09738a9a0ad5ec8d5af
         <p class="mb-0" style="color: #4a5568;">
             Sudah punya akun? <a href="{{ route('login') }}" class="auth-link">Masuk Sekarang</a>
         </p>
