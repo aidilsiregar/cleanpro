@@ -4,10 +4,38 @@
 @section('subtitle', 'Buat akun baru')
 
 @section('content')
+<style>
+    /* 1. Aktifkan scrollbar HANYA di bagian paling kanan layar browser */
+    html {
+        overflow-y: scroll !important;
+        height: auto !important;
+    }
+    body {
+        overflow-y: visible !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+    
+    /* 2. Paksa semua container layout agar tingginya fleksibel */
+    .min-vh-100, .vh-100, [class*="wrapper"], [class*="container"] {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* 3. MATIKAN paksa semua scrollbar gaib yang muncul di tengah-tengah form */
+    * {
+        /* Kecuali html dan body, semua elemen tidak boleh bikin scrollbar sendiri */
+        scrollbar-width: none !important; /* Untuk Firefox */
+    }
+    *::-webkit-scrollbar {
+        display: none !important; /* Untuk Chrome, Safari, dan Edge */
+    }
+</style>
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
-    <!-- Name -->
     <div class="mb-3">
         <label for="name" class="form-label">Nama Lengkap</label>
         <div class="input-group">
@@ -20,7 +48,6 @@
         </div>
     </div>
 
-    <!-- Email -->
     <div class="mb-3">
         <label for="email" class="form-label">Alamat Email</label>
         <div class="input-group">
@@ -33,7 +60,6 @@
         </div>
     </div>
 
-    <!-- Phone -->
     <div class="mb-3">
         <label for="phone" class="form-label">Nomor Telepon</label>
         <div class="input-group">
@@ -46,7 +72,6 @@
         </div>
     </div>
 
-    <!-- Address -->
     <div class="mb-3">
         <label for="address" class="form-label">Alamat</label>
         <div class="input-group">
@@ -59,7 +84,6 @@
         </div>
     </div>
 
-    <!-- Password -->
     <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
@@ -76,7 +100,6 @@
         <small class="form-text">Password harus minimal 8 karakter.</small>
     </div>
 
-    <!-- Confirm Password -->
     <div class="mb-4">
         <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
         <div class="input-group">
@@ -89,17 +112,14 @@
         </div>
     </div>
 
-    <!-- Submit -->
     <button type="submit" class="btn btn-primary w-100">
         <i class="fas fa-user-plus me-2"></i> Daftar
     </button>
 
-    <!-- Divider -->
     <div class="divider">
         <span>atau</span>
     </div>
 
-    <!-- Social Register -->
     <div class="d-grid gap-2">
         <button type="button" class="btn-social">
             <i class="fab fa-google" style="color: #db4437;"></i> Daftar dengan Google
@@ -109,7 +129,6 @@
         </button>
     </div>
 
-    <!-- Login Link -->
     <div class="text-center mt-4">
         <p class="mb-0" style="color: #4a5568;">
             Sudah punya akun? <a href="{{ route('login') }}" class="auth-link">Masuk Sekarang</a>
