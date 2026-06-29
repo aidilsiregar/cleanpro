@@ -121,26 +121,6 @@
         </div>
     </div>
 
-
-    <button type="submit" class="btn btn-primary w-100">
-        <i class="fas fa-user-plus me-2"></i> Daftar
-    </button>
-
-    <div class="divider">
-        <span>atau</span>
-    </div>
-
-    <div class="d-grid gap-2">
-        <button type="button" class="btn-social">
-            <i class="fab fa-google" style="color: #db4437;"></i> Daftar dengan Google
-        </button>
-        <button type="button" class="btn-social">
-            <i class="fab fa-facebook" style="color: #4267B2;"></i> Daftar dengan Facebook
-        </button>
-    </div>
-
-    <div class="text-center mt-4">
-
     <!-- Submit -->
     <div class="btn-submit">
         <button type="submit" class="btn btn-primary w-100">
