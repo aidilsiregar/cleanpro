@@ -4,10 +4,38 @@
 @section('subtitle', 'Masuk ke akun Anda')
 
 @section('content')
+<style>
+    /* 1. Aktifkan scrollbar HANYA di bagian paling kanan layar browser */
+    html {
+        overflow-y: scroll !important;
+        height: auto !important;
+    }
+    body {
+        overflow-y: visible !important;
+        height: auto !important;
+        min-height: 100vh !important;
+    }
+    
+    /* 2. Paksa semua container layout agar tingginya fleksibel */
+    .min-vh-100, .vh-100, [class*="wrapper"], [class*="container"] {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* 3. MATIKAN paksa semua scrollbar gaib yang muncul di tengah-tengah form */
+    * {
+        /* Kecuali html dan body, semua elemen tidak boleh bikin scrollbar sendiri */
+        scrollbar-width: none !important; /* Untuk Firefox */
+    }
+    *::-webkit-scrollbar {
+        display: none !important; /* Untuk Chrome, Safari, dan Edge */
+    }
+</style>
 <form method="POST" action="{{ route('login') }}">
     @csrf
 
-    <!-- Email -->
     <div class="form-group mb-3">
         <label for="email" class="form-label">Alamat Email</label>
         <div class="input-group">
@@ -20,7 +48,6 @@
         </div>
     </div>
 
-    <!-- Password -->
     <div class="form-group mb-3">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
@@ -36,7 +63,6 @@
         </div>
     </div>
 
-    <!-- Remember & Forgot -->
     <div class="form-group d-flex justify-content-between align-items-center mb-4">
         <div class="form-check">
             <input type="checkbox" name="remember" id="remember" class="form-check-input" {{ old('remember') ? 'checked' : '' }}>
@@ -49,21 +75,18 @@
         @endif
     </div>
 
-    <!-- Submit -->
     <div class="btn-submit">
         <button type="submit" class="btn btn-primary w-100">
             <i class="fas fa-sign-in-alt me-2"></i> Masuk
         </button>
     </div>
 
-    <!-- Divider -->
     <div class="divider-auth">
         <div class="divider">
             <span>atau</span>
         </div>
     </div>
 
-    <!-- Social Login -->
     <div class="social-login">
         <div class="d-grid gap-2">
             <button type="button" class="btn-social">
@@ -75,28 +98,11 @@
         </div>
     </div>
 
-    <!-- Register Link -->
     <div class="auth-link-bottom text-center mt-4">
         <p class="mb-0" style="color: #4a5568;">
             Belum punya akun? <a href="{{ route('register') }}" class="auth-link">Daftar Sekarang</a>
         </p>
     </div>
 
-    <!-- Demo Credentials -->
-    <div class="demo-credentials">
-        <p class="mb-2"><strong><i class="fas fa-info-circle"></i> Akun Demo</strong></p>
-        <div class="cred-item">
-            <span>Admin:</span>
-            <span>admin@cleanpro.com / password</span>
-        </div>
-        <div class="cred-item">
-            <span>Petugas:</span>
-            <span>petugas@cleanpro.com / password</span>
-        </div>
-        <div class="cred-item">
-            <span>User:</span>
-            <span>user@cleanpro.com / password</span>
-        </div>
-    </div>
 </form>
 @endsection
